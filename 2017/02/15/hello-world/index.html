@@ -6,14 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017/2 | 郑志明的个人博客</title>
+  <title>使用hexo+github创建自己的个人博客 | 郑志明的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="郑志明的个人博客">
-<meta property="og:url" content="http://yoursite.com/archives/2017/02/index.html">
+  <meta name="description" content="安装node.js、git
+搭建github博客创建仓库新建一个名为 你的用户名.github.io的仓库，如我的用户名是zhengzhiming123,我创建的仓库：zhengzhiming123.github.io。每个用户最多只能创建一个这样可以直接使用域名访问的仓库。
+###配置SSH key为什么要配置这个呢？因为你提交代码要拥有你的github权限才可以，但是直接使用用户名和密码太不安">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用hexo+github创建自己的个人博客">
+<meta property="og:url" content="http://yoursite.com/2017/02/15/hello-world/index.html">
 <meta property="og:site_name" content="郑志明的个人博客">
+<meta property="og:description" content="安装node.js、git
+搭建github博客创建仓库新建一个名为 你的用户名.github.io的仓库，如我的用户名是zhengzhiming123,我创建的仓库：zhengzhiming123.github.io。每个用户最多只能创建一个这样可以直接使用域名访问的仓库。
+###配置SSH key为什么要配置这个呢？因为你提交代码要拥有你的github权限才可以，但是直接使用用户名和密码太不安">
+<meta property="og:updated_time" content="2017-02-14T16:15:49.191Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="郑志明的个人博客">
+<meta name="twitter:title" content="使用hexo+github创建自己的个人博客">
+<meta name="twitter:description" content="安装node.js、git
+搭建github博客创建仓库新建一个名为 你的用户名.github.io的仓库，如我的用户名是zhengzhiming123,我创建的仓库：zhengzhiming123.github.io。每个用户最多只能创建一个这样可以直接使用域名访问的仓库。
+###配置SSH key为什么要配置这个呢？因为你提交代码要拥有你的github权限才可以，但是直接使用用户名和密码太不安">
   
     <link rel="alternative" href="/atom.xml" title="郑志明的个人博客" type="application/atom+xml">
   
@@ -149,76 +159,150 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      使用hexo+github创建自己的个人博客
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/15/hello-world/" class="archive-article-date">
+
+        
+        <a href="/2017/02/15/hello-world/" class="archive-article-date">
   	<time datetime="2017-02-14T16:15:04.865Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-15</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/15/hello-world/">使用hexo+github创建自己的个人博客</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>安装node.js、git</p>
+<h2 id="搭建github博客"><a href="#搭建github博客" class="headerlink" title="搭建github博客"></a>搭建github博客</h2><h3 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h3><p>新建一个名为 你的用户名.github.io的仓库，如我的用户名是zhengzhiming123,我创建的仓库：zhengzhiming123.github.io。<br>每个用户最多只能创建一个这样可以直接使用域名访问的仓库。</p>
+<p>###配置SSH key<br>为什么要配置这个呢？因为你提交代码要拥有你的github权限才可以，但是直接使用用户名和密码太不安全了，所以使用ssh key来解决本地和服务器的连接问题。<br>在git bash 中执行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> ~/. ssh <span class="comment">#检查本机已存在的ssh密匙</span></div></pre></td></tr></table></figure></p>
+<p>然后执行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C <span class="string">"邮件地址"</span> <span class="comment"># 注：-C 是大写</span></div></pre></td></tr></table></figure></p>
+<p>然后连续3次回车，最终会生成一个文件在用户目录下，打开用户目录，找到.ssh\id_rsa.pub文件，复制里面的内容，打开github主页，进入右上角 个人设置-&gt; SSH and PGG keys -&gt;New SSH key<br>将刚才复制的内容粘贴到key那里，title随便填，保存。</p>
+<h3 id="测试是否成功"><a href="#测试是否成功" class="headerlink" title="测试是否成功"></a>测试是否成功</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh -T github@github.com <span class="comment"># 注：邮箱不用改</span></div></pre></td></tr></table></figure>
+<p>如果提示 are you sure you want to continue connecting(yes/no)?<br>输入 yes，然后会看到<br>Hi **,You’ve successfully authenticated,but GitHub does not provide shell access.<br>看到这个信息说明SSH配置成功！<br>此时你还需要配置：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name <span class="string">"zhengzhiming123"</span> <span class="comment"># 你的github用户名</span></div><div class="line">$ git config --global user.email <span class="string">"***@qq.com"</span> <span class="comment"># 填写你的github注册邮箱</span></div></pre></td></tr></table></figure></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/02/15/hello-world/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/14/my-first-blog/" class="archive-article-date">
-  	<time datetime="2017-02-14T15:36:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-14</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/14/my-first-blog/">在github上创建自己的个人博客</a>
-    </h1>
+  
+    <a href="/2017/02/14/my-first-blog/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">在github上创建自己的个人博客</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -241,8 +325,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
