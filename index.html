@@ -158,13 +158,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/14/my-first-blog/">使用hexo+github创建自己的个人博客</a>
+      <a class="article-title" href="/2017/02/15/my-first-blog/">使用hexo+github创建自己的个人博客</a>
     </h1>
   
 
         
-        <a href="/2017/02/14/my-first-blog/" class="archive-article-date">
-  	<time datetime="2017-02-14T15:36:36.929Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-14</time>
+        <a href="/2017/02/15/my-first-blog/" class="archive-article-date">
+  	<time datetime="2017-02-15T13:30:53.883Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-15</time>
 </a>
         
       </header>
@@ -178,13 +178,17 @@
 <p>然后连续3次回车，最终会生成一个文件在用户目录下，打开用户目录，找到.ssh\id_rsa.pub文件，复制里面的内容，打开github主页，进入右上角 个人设置-&gt; SSH and PGG keys -&gt;New SSH key<br>将刚才复制的内容粘贴到key那里，title随便填，保存。</p>
 <h3 id="测试是否成功"><a href="#测试是否成功" class="headerlink" title="测试是否成功"></a>测试是否成功</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh -T github@github.com <span class="comment"># 注：邮箱不用改</span></div></pre></td></tr></table></figure>
 <p>如果提示 are you sure you want to continue connecting(yes/no)?<br>输入 yes，然后会看到<br>Hi **,You’ve successfully authenticated,but GitHub does not provide shell access.<br>看到这个信息说明SSH配置成功！<br>此时你还需要配置：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name <span class="string">"zhengzhiming123"</span> <span class="comment"># 你的github用户名</span></div><div class="line">$ git config --global user.email <span class="string">"***@qq.com"</span> <span class="comment"># 填写你的github注册邮箱</span></div></pre></td></tr></table></figure></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
+<h1 id="使用hexo写博客"><a href="#使用hexo写博客" class="headerlink" title="使用hexo写博客"></a>使用hexo写博客</h1><h2 id="hexo简介"><a href="#hexo简介" class="headerlink" title="hexo简介"></a>hexo简介</h2><p>hexo是一个简单、快速、强大的机遇Github Pages的博客发布工具，支持markdown格式，有众多优秀插件和主题。<br>官网：<a href="http://hexo.io" target="_blank" rel="external">http://hexo.io</a><br>github: <a href="https://github.com/hexojs/hexo" target="_blank" rel="external">https://github.com/hexojs/hexo</a></p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cnpm install -g hexo <span class="comment">#使用cnpm比较快</span></div></pre></td></tr></table></figure>
+<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p>新建hexo的文件夹（名字随便），进入此文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo init</div></pre></td></tr></table></figure></p>
+<p>hexo 会自动下载一些文件到这个目录<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo g <span class="comment">#生成</span></div><div class="line">$ hexo s <span class="comment">#启动服务</span></div></pre></td></tr></table></figure></p>
+<p>执行以上命令后，hexo就会在public文件夹生成相关的html文件，这些文件将来都是要提交到github上的。<br>hexo s 是开启本地预览服务，打开浏览器访问 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 即可看到内容。</p>
+<h3 id="修改主题"><a href="#修改主题" class="headerlink" title="修改主题"></a>修改主题</h3><p>默认的主题比较丑，首先来替换主题。<br>hexo-theme-jekyll 和 hexo-theme-yilia 这两个主题个人感觉比较好看。<br>首先下载主题：<br>在hexo目录下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> https://github.com/litten/hexo-theme-yilia.git themes/yilia</div></pre></td></tr></table></figure></p>
+<p>修改 _config.yml 中的theme:landscape 改为 theme: yilia,然后重新执行hexo g 来重新生成。<br>如果出项一些莫名其妙的问题，可以先执行 hexo clean 来清理一下public的内容，然后再重新生成和发布。</p>
+<h3 id="上传到github"><a href="#上传到github" class="headerlink" title="上传到github"></a>上传到github</h3><p>ssh key 配置好后，<br>配置_config.yml 中有关deploy部分：<br>正确写法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repository: git@github.com:zhengzhiming123/zhengzhiming123.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
+<p>还需要安装一个插件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cnpm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
+<p>部署这个命令一定要用git bash,否则会提示 Permission denied(publickey).<br>然后在git bash，输入 hexo d 就会将本次有改动的代码全部提交，没有改动的不会。</p>
+<h3 id="常用hexo命令"><a href="#常用hexo命令" class="headerlink" title="常用hexo命令"></a>常用hexo命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">hexo new <span class="string">"postName"</span> <span class="comment">#新建文章</span></div><div class="line">hexo new page <span class="string">"pageName"</span> <span class="comment">#新建页面</span></div><div class="line">hexo g <span class="comment">#生成静态页面至public目录</span></div><div class="line">hexo s <span class="comment">#开启预览访问端口（默认端口4000，'ctrl + c'关闭server）</span></div><div class="line">hexo d <span class="comment">#部署到GitHub</span></div><div class="line">hexo <span class="built_in">help</span>  <span class="comment"># 查看帮助</span></div><div class="line">hexo version  <span class="comment">#查看Hexo的版本</span></div></pre></td></tr></table></figure>
       
 
       
@@ -196,7 +200,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/14/my-first-blog/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/02/15/my-first-blog/">展开全文 >></a>
         </p>
       
 
